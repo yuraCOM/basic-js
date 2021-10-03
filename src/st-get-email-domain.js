@@ -13,5 +13,5 @@ import { NotImplementedError } from '../extensions/index.js';
 export default function getEmailDomain(email ) {
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
-  return email.match(/@(.+)/g).toString().slice(1))
+  return email.match(/@(\w.+)/g).toString().slice(1)
 }
