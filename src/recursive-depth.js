@@ -13,44 +13,8 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default class DepthCalculator {
-    calculateDepth(arrN) {
-
-        function getMaxDepth(arr, level){
-          if ( !level ){
-            level = 0;
-          }
-          if ( Array.isArray(arr) ) {
-            level += 1;
-            var p = level;
-            for(var i=0; i<arr.length; i++){
-              var c = arr[i];
-              var sublevel = getMaxDepth(c, level)
-              p = Math.max( p, sublevel);
-              console.log(c,sublevel,p )
-            }
-            return p;
-          }  else {
-            return level;
-          }
-        }
-        return getMaxDepth(arrN)
-    }
+  calculateDepth(/* arr */) {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
 }
-
-// export default class DepthCalculator {
-//     calculateDepth(arrN) {
-//       Array.prototype.max = function() {
-//         return Math.max.apply(null, this);
-//       };
-//
-//       function f1(item, level = 0){
-//         if (item instanceof Array){
-//           return item.map(function(value, index){
-//             return f1(value, level + 1)
-//           }).max() - (level > 0 ? 0 : 1) // Если главный массив не считаем
-//         }
-//         return level;
-//       }
-//       return f1(arrN)
-//     }
-// }
