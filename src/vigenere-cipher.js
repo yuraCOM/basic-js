@@ -20,12 +20,54 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default class VigenereCipheringMachine {
-  encrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+//   encrypt() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+//   decrypt() {
+//     throw new NotImplementedError('Not implemented');
+//     // remove line with error and write your code here
+//   }
+// }
+
+  direct;
+
+  constructor(direct){
+    this.direct = direct;
   }
-  decrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+  encrypt(message, key) {
+    if (message === undefined || key === undefined){
+      throw new Error('Incorrect arguments!');
+    }
+    message = message.toUpperCase();
+    key = key.toUpperCase();
+
+    let result = '';
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    let keyNumber = 0;
+
+    console.log(message, key, result)
+    return message
   }
+
+
+  decrypt(message, key) {
+    if (message === undefined || key === undefined){
+      throw new Error('Incorrect arguments!');
+    }
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    message = message.toUpperCase();
+    key = key.toUpperCase();
+
+    let result = '';
+    // const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    console.log(message, key, result)
+
+    return message
+  }
+
 }
+
